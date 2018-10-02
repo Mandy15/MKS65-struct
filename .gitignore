@@ -1,0 +1,8 @@
+# swapfiles
+*.swp
+
+# Object files
+*.o
+
+# Executible
+*.out
