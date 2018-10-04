@@ -1,11 +1,11 @@
 all: tester.o
-	gcc -o test tester.o
+	gcc -o tester tester.o
 
-tester.c: tester.c
+tester.o: tester.c
 	gcc -c tester.c
 
 clean:
-	rm test *.o
+	rm tester *.o
 
 run:
 	./test
