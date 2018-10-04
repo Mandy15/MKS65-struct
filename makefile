@@ -8,4 +8,4 @@ clean:
 	rm tester *.o
 
 run:
-	./test
+	./tester

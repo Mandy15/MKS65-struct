@@ -7,43 +7,53 @@
 
 struct pair
 {
-    int num;
-    char string[32];
+    char words[32];
+    char defs[64];
 };
 
-char *values[3] = {"red", "blue", "yellow",
-                   };
+char *keys[7] = {"tump", "notionate", "rewild", "nugacity", "interloper" , "diapason", "applesauce",
+                  };
+char *values[7] = {"a small mound, hill, or rise of ground",
+                    "strong-willed or stubborn",
+                    "to return (land) to a more natural state",
+                    "triviality; insignificance",
+                    "a person who interferes or meddles in the affairs of others",
+                    "a full, rich outpouring of melodious sound",
+                    "(Slang) nonsense; bunk",
+                  };
+
 //// f u n c t i o n s ////
 
 void display( struct pair *oof)
 {
-    printf("%d: %s\n", oof->num, oof->string);
+    printf("Word of the Day: %s\nDefinition: %s\n", oof->words, oof->defs);
 }
 
 struct pair random_pair()
 {
     srand( time(NULL));
     struct pair out;
-    out.num = rand();
-    strcpy( out.string, values[ rand() % 3] );
+    int i = rand() % 7;
+    strcpy( out.words, keys[i] );
+    strcpy( out.defs, values[i] );
     return out;
 }
 
 struct pair * modify_pair( struct pair *oof )
 {
-    oof->num += 16;
-    strcat( oof->string, "ay");
+    strcat( oof->words, "ay");
+    strcat( oof->defs, "ay");
     return oof;
 }
 
 int main()
 {
-    struct pair jeff;
-    jeff = random_pair();
-    int i = 64;
-    while( i-- ) {
-        display( &jeff);
-        modify_pair( &jeff);
-    }
+    struct pair test;
+    test = random_pair();
+    printf("\nExample of struct\n");
+    display( &test);
+    modify_pair( &test);
+    printf("\nAdd \'ay\' to the end\n");
+    display( &test);
     return 0;
 }

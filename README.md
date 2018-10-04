@@ -10,5 +10,3 @@
 - Write a main function that tests all these things.
     - Have meaningful output.
 - DONT FORGET A MAKEFILE
-
-https://www.dictionary.com/e/s/longest-english-words/?param=HP#sesquipedalianism
