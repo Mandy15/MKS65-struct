@@ -11,14 +11,13 @@ struct pair
     char defs[64];
 };
 
-char *keys[7] = {"tump", "notionate", "rewild", "nugacity", "interloper" , "diapason", "applesauce",
+char *keys[6] = {"tump", "notionate", "rewild", "nugacity", "interloper" , "applesauce",
                   };
-char *values[7] = {"a small mound, hill, or rise of ground",
+char *values[6] = {"a small mound, hill, or rise of ground",
                     "strong-willed or stubborn",
                     "to return (land) to a more natural state",
                     "triviality; insignificance",
                     "a person who interferes or meddles in the affairs of others",
-                    "a full, rich outpouring of melodious sound",
                     "(Slang) nonsense; bunk",
                   };
 
@@ -33,7 +32,7 @@ struct pair random_pair()
 {
     srand( time(NULL));
     struct pair out;
-    int i = rand() % 7;
+    int i = rand() % 6;
     strcpy( out.words, keys[i] );
     strcpy( out.defs, values[i] );
     return out;
